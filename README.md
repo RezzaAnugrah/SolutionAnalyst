@@ -1,7 +1,7 @@
-# SolutionAnalyst
+# Solution Analyst
 
 # API
-- API User Registration
+1. API User Registration
     - POST  : http://api.xyz.com/V1.0/user/registration
     
     Request
@@ -30,7 +30,7 @@
     }
     ```
 
-- API User Sign
+2. API User Sign
     - POST  : http://api.xyz.com/V1.0/user/sign
 
     Request
@@ -49,7 +49,7 @@
     }
     ````
 
-- API Loan Application
+3. API Loan Application
     - POST  : http://api.xyz.com/V1.0/loan-application
 
     Request
@@ -84,7 +84,7 @@
     }
     ```
 
-- API Loan Application Status
+4. API Loan Application Status
     - POST  : http://api.xyz.com/V1.0/loan-application-status
 
     Request
@@ -108,7 +108,7 @@
     }
     ```
 
-- API Loan Application Notif
+5. API Loan Application Notif
     - POST  : http://api.xyz.com/V1.0/loan-application-notif
 
     Request
