@@ -2,7 +2,7 @@
 
 # API
 1. API User Registration
-    - POST  : http://api.xyz.com/V1.0/user/registration
+    - POST  : https://api.xyz.com/V1.0/user/registration
     
     Request
     ```json
@@ -31,7 +31,7 @@
     ```
 
 2. API User Sign
-    - POST  : http://api.xyz.com/V1.0/user/sign
+    - POST  : https://api.xyz.com/V1.0/user/sign
 
     Request
     ```json
@@ -50,7 +50,7 @@
     ````
 
 3. API Loan Application
-    - POST  : http://api.xyz.com/V1.0/loan-application
+    - POST  : https://api.xyz.com/V1.0/loan-application
 
     Request
     ```json
@@ -85,7 +85,7 @@
     ```
 
 4. API Loan Application Status
-    - POST  : http://api.xyz.com/V1.0/loan-application-status
+    - POST  : https://api.xyz.com/V1.0/loan-application-status
 
     Request
     ```json
@@ -109,7 +109,7 @@
     ```
 
 5. API Loan Application Notif
-    - POST  : http://api.xyz.com/V1.0/loan-application-notif
+    - POST  : https://api.xyz.com/V1.0/loan-application-notif
 
     Request
     ```json
