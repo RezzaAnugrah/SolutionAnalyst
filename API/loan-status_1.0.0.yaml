@@ -8,10 +8,10 @@ servers:
   - url: "https://api.xyz.com/V1.0.0"
 
 paths:
-  /loan-notification:
+  /loan-status:
     post:
-      summary: Mengirimkan Notification Status Pinjaman
-      description: Mengirimkan notification status pinjaman melalui aplikasi mobile
+      summary: Mengirimkan Informasi Status Pinjaman
+      description: Mengirimkan informasi status pinjaman melalui aplikasi mobile
       parameters:
         - in: header
           name: API-Key

@@ -1,8 +1,16 @@
 # Solution Analyst
 
 # API
-1. API User Registration
-    - POST  : https://api.xyz.com/V1.0/user/registration
+Terdapat beberapa API dalam pengembangan mobile apps pada Pinjaman Online, Berikut API yang digunakan pada implementasi pengembangan.
+
+1. **User Registration API**
+    
+    API ini digunakan untuk melakukan registrasi user baru melalui mobile apps
+    
+    Method
+    ```api
+    POST  : https://api.xyz.com/V1.0/user/registration
+    ```
     
     Request
     ```json
@@ -30,8 +38,14 @@
     }
     ```
 
-2. API User Sign
-    - POST  : https://api.xyz.com/V1.0/user/sign
+2. **User Signin API**
+
+    API ini digunakan untuk melakukan signin user yang sudah terdaftar
+
+    Method
+    ```api
+    POST  : https://api.xyz.com/V1.0/user/signin
+    ```
 
     Request
     ```json
@@ -49,8 +63,14 @@
     }
     ````
 
-3. API Loan Application
-    - POST  : https://api.xyz.com/V1.0/loan-application
+3. **Loan Application API**
+
+    API ini digunakan untuk user melakukan permohonan pinjaman melalui mobile apps
+
+    Method
+    ```api
+    POST  : https://api.xyz.com/V1.0/loan-application
+    ```
 
     Request
     ```json
@@ -84,14 +104,20 @@
     }
     ```
 
-4. API Loan Application Status
-    - POST  : https://api.xyz.com/V1.0/loan-application-status
+4. **Loan Application Status API**
+
+    API ini digunakan untuk user mengetahui status dari permohonan pinjaman yang diajukan melalui mobile apps
+
+    Method
+    ```api
+    POST  : https://api.xyz.com/V1.0/loan-application-status
+    ```
 
     Request
     ```json
     {
-    "userID": "1234567890",
-    "fullname": "Rezza Anugrah Mutiarawan"
+        "userID": "1234567890",
+        "fullname": "Rezza Anugrah Mutiarawan"
     }
     ```
 
@@ -108,8 +134,14 @@
     }
     ```
 
-5. API Loan Application Notif
-    - POST  : https://api.xyz.com/V1.0/loan-application-notif
+5. **Loan Application Notif API**
+
+    API ini digunakan untuk memberikan notif ke user terkait status(approve / reject) permohonan pinjaman yang nantinya diinformasikan melalui email dan whatsapp
+
+    Method
+    ```api
+    POST  : https://api.xyz.com/V1.0/loan-application-notif
+    ```
 
     Request
     ```json
@@ -135,6 +167,43 @@
             "startTenor": "27-08-2025",
             "endTenor": "27-07-2026",
             "status": "Approved"
+        }
+    }
+    ```
+
+
+5. **Loan Status API**
+
+    API ini digunakan untuk user melihat detail pinjaman saat ini
+
+    
+    Method
+    ```api
+    POST  : https://api.xyz.com/V1.0/loan-notif
+    ```
+
+    Request
+    ```json
+    {
+        "userID": "1234567890",
+        "fullname": "Rezza Anugrah Mutiarawan"
+    }
+    ```
+
+    Response
+    ```json
+    {
+        "responseCode": "00",
+        "responseMessage": "Success",
+        "svcData": {
+            "userID": "1234567890",
+            "fullname": "Rezza Anugrah Mutiarawan",
+            "loanAmount": "12.000.000",
+            "paid": "7.000.000",
+            "debt": "5.000.000",
+            "tenor": "5",
+            "monthlyFee": "1.000.000",
+            "status": "Active"
         }
     }
     ```
