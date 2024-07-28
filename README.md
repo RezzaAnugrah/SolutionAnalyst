@@ -134,7 +134,7 @@ Terdapat beberapa API dalam pengembangan mobile apps pada Pinjaman Online, Berik
     }
     ```
 
-5. **Loan Application Notif API**
+6. **Loan Application Notif API**
 
     API ini digunakan untuk memberikan notif ke user terkait status(approve / reject) permohonan pinjaman yang nantinya diinformasikan melalui email dan whatsapp
 
@@ -172,7 +172,7 @@ Terdapat beberapa API dalam pengembangan mobile apps pada Pinjaman Online, Berik
     ```
 
 
-5. **Loan Status API**
+7. **Loan Status API**
 
     API ini digunakan untuk user melihat detail pinjaman saat ini
 
@@ -208,3 +208,34 @@ Terdapat beberapa API dalam pengembangan mobile apps pada Pinjaman Online, Berik
     }
     ```
 
+6. **Repayment API**
+    
+    API ini digunakan untuk melakukan pembayaran pinjaman
+    
+    Method
+    ```api
+    POST  : https://api.xyz.com/V1.0/user/repayment
+    ```
+    
+    Request
+    ```json
+    {
+        "transcationID": "1234567890",
+        "amount": "1.000.000",
+        "paymentDate": "27-07-2024"
+    }
+    ```
+
+    Response
+    ```json
+    {
+        "responseCode": "00",
+        "responseMessage": "Success",
+        "svcData": {
+            "fullname": "Rezza Anugrah Mutiarawan",
+            "amount": "1.000.000",
+            "tenorTo": "5",
+            "status": "Success"
+        }
+    }
+    ```
