@@ -232,6 +232,8 @@ Terdapat beberapa API dalam pengembangan mobile apps pada Pinjaman Online, Berik
         "responseCode": "00",
         "responseMessage": "Success",
         "svcData": {
+            "transcationID": "1234567890",
+            "paymentID": "1234567890",
             "fullname": "Rezza Anugrah Mutiarawan",
             "amount": "1.000.000",
             "tenorTo": "5",

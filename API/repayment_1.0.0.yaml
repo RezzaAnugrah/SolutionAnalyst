@@ -83,7 +83,7 @@ components:
       properties:
         transcationID:
           type: string
-          description: ID user
+          description: Transaction ID
           example: 1234567890
         amount:
           type: string
@@ -148,6 +148,14 @@ components:
       description: Detail for response
       additionalProperties: false
       properties:
+        transcationID:
+            type: string
+            description: Transaction ID
+            example: 1234567890
+        paymentID:
+            type: string
+            description: Payment ID
+            example: 1234567890
         fullname:
             type: string
             maxLength: 50
