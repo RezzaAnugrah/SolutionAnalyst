@@ -101,9 +101,11 @@ components:
         ktp:
           type: string
           description: KTP User
+          format: binary
           example: "https://api.xyz.com/V1.0/photo-upload/KTP.jpg"
         selfieKtp:
           type: string
+          format: binary
           description: Selfie Beserta KTP
           example: "https://api.xyz.com/V1.0/photo-upload/selfieKTP.jpg"
     
