@@ -1,0 +1,170 @@
+openapi: 3.0.0
+info:
+  title: Loan Repayment API
+  description: API untuk mengirim tentang pembayaran pinjaman
+  version: 1.0.0
+
+servers:
+  - url: "https://api.xyz.com/V1.0.0"
+
+paths:
+  /repayment:
+    post:
+      summary: Mengirimkan Informasi Pembayaran Pinjaman
+      description: Mengirimkan informasi pembayaran pinjaman
+      parameters:
+        - in: header
+          name: API-Key
+          required: true
+          description: api-key unique for manage client
+          schema:
+            type: string
+        - in: header
+          name: Request-ID
+          required: true
+          description: request-id is unique
+          schema:
+            type: string
+        - in: header
+          name: Timestamp
+          required: true
+          description: current time
+          schema:
+            type: string
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Request'
+      responses:
+        '200':
+          description: Repayment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProviderErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+        '504':
+          description: Gateway timeout
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+
+components:
+  schemas:
+    Request:
+      type: object
+      properties:
+        transcationID:
+          type: string
+          description: ID user
+          example: 1234567890
+        amount:
+          type: string
+          description: Jumlah Pembayaran
+          example: 1.000.000
+        paymentDate:
+          type: string
+          description: Tanggal Pembayaran
+          example: 27-07-2024
+         
+    SuccessResponse:
+      type: object
+      description: Detail for response
+      additionalProperties: false
+      properties:
+        responseCode:
+          type: string
+          maxLength: 2 
+          description: 'Response Code , length:2'
+          example: '00'
+        responseMessage:
+          type: string
+          maxLength: 50
+          description: status description (Ex:Success, Invalid Message, Unknown Error from Provider), length:50
+          example: Success
+        svcData: 
+          $ref: '#/components/schemas/SvcDataRs'
+
+    ProviderErrorResponse:
+      type: object
+      description: Detail for response
+      additionalProperties: false
+      properties:
+        responseCode:
+          type: string
+          maxLength: 2
+          description: 'Response Code , length:2'
+          example: 'Q1'
+        responseMessage:
+          type: string
+          maxLength: 50
+          description: status description (Ex:User Not Found, Already Exist, Unknown Error from Provider), length:50
+          example: User Not Found
+    APIErrorResponse:
+      type: object
+      description: Detail for response
+      additionalProperties: false
+      properties:
+        responseCode:
+          type: string
+          maxLength: 2
+          description: 'Response Code , length:2'
+          example: '01'
+        responseMessage:
+          type: string
+          maxLength: 50
+          description: status description (Ex:Bad Request, Unauthorized, Not Found, Gateway Timeout ), length:50
+          example: Bad Request
+
+    SvcDataRs:
+      type: object
+      description: Detail for response
+      additionalProperties: false
+      properties:
+        fullname:
+            type: string
+            maxLength: 50
+            description: Nama User, length:50
+            example: Rezza Anugrah Mutiarawan
+        amount:
+          type: string
+          maxLength: 15
+          description: Jumlah pinjaman yang di approved
+          example: 1.000.000
+        tenorTo:
+          type: string
+          maxLength: 15
+          description: Sisa tenor pinjaman
+          example: 5
+        status:
+          type: string
+          maxLength: 15
+          description: Status Pinjaman
+          example: Success
